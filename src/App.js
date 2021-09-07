@@ -5,7 +5,6 @@ import Textform from './components/Textform';
 import About from './components/About';
 import { useState } from 'react';
 import {BrowserRouter as Router,Switch,Link,Route} from 'react-router-dom';
-import Contact from './components/Contact';
 
 
 function App() {
