@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import About from './components/About';
 import { useState } from 'react';
-// import {BrowserRouter as Router,Switch,Link,Route} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Link,Route} from 'react-router-dom';
 import Contact from './components/Contact';
 
 
@@ -22,23 +22,17 @@ function App() {
   }
   return (
     <>      
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtil" mode={mode} toogleMode={modeSwap} />
-        {/* <Switch>
-          <Route exact path="/"> */}
-              
+        <Switch>
+          <Route exact path="/">              
               <Textform header="Enter Your Text" mode={mode}/>
-          {/* </Route> */}
-          {/* <Route exact path="/about"> */}
-              
-              {/* <About title="About Page"  mode={mode}/> */}
-          {/* </Route> */}
-          {/* <Route exact path="/contact"> */}
-              
-              {/* <Contact title="Contact Page" mode={mode} /> */}
-          {/* </Route> */}
-        {/* </Switch> */}
-      {/* </Router> */}
+          </Route>
+          <Route exact path="/about">              
+              <About title="About Page"  mode={mode}/>
+          </Route>
+        </Switch>
+      </Router>
     </>
     
   );
