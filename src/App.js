@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar';
+import Textform from './components/Textform';
+import About from './components/About';
+import { useState } from 'react';
+// import {BrowserRouter as Router,Switch,Link,Route} from 'react-router-dom';
+import Contact from './components/Contact';
+
 
 function App() {
+  const [mode,setMode]=useState('light');
+  const modeSwap=()=>{
+    if(mode==='light'){
+      setMode('dark');
+      document.body.style.backgroundColor="#475663"
+    }else{
+      setMode('light');
+      document.body.style.backgroundColor="#fff"
+    }
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>      
+      {/* <Router> */}
+        <Navbar title="TextUtil" mode={mode} toogleMode={modeSwap} />
+        {/* <Switch>
+          <Route exact path="/"> */}
+              
+              <Textform header="Enter Your Text" mode={mode}/>
+          {/* </Route> */}
+          {/* <Route exact path="/about"> */}
+              
+              {/* <About title="About Page"  mode={mode}/> */}
+          {/* </Route> */}
+          {/* <Route exact path="/contact"> */}
+              
+              {/* <Contact title="Contact Page" mode={mode} /> */}
+          {/* </Route> */}
+        {/* </Switch> */}
+      {/* </Router> */}
+    </>
+    
   );
 }
 
